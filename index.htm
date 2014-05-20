@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Diablo 3 Random Build Gen v1.5</title>
+<link rel="shortcut icon" href="favicon.ico" />
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="d3random.js"></script>
+<link href="design.css" rel="stylesheet" type="text/css" title="design" />
+</head>
+<body onload="javascript:initialize()">
+<div id="Summary" style="position: absolute; display: none;">
+ This is a summary
+</div>
+<div id="Content">
+ <div class="intro_area">
+ <span class="section">Diablo 3 v1.03 Random Build Generator</span>
+ <p>Use this tool to generate random builds for use in Diablo 3.  You can try to confine to the build to a farming run, a difficulty level, or from character creation to death (yes, you have to auto-attack until you get the skill and rune!).  For extra fun, try hardcore only using a random build.  Note that some builds may be totally unviable.  It may not be possible to assign skills to mouse clicks depending on what the skill does.</p>
+ <p>Contact: sabareq@yahoo.com</p>
+ </div>
+ <div class="action_area">
+  <select id="class_selector" title="Class to generate skills for" onchange="reset()">
+   <option value="class_barb">Barbarian</option>
+   <option value="class_dh">Demon Hunter</option>
+   <option value="class_monk">Monk</option>
+   <option value="class_wd">Witch Doctor</option>
+   <option value="class_wiz">Wizard</option>
+  </select>
+  <select id="level_selector" title="Level cap for generated skills" onchange="reset()">
+   <option value="1">Lv. 1</option>
+   <option value="2">Lv. 2</option>
+   <option value="3">Lv. 3</option>
+   <option value="4">Lv. 4</option>
+   <option value="5">Lv. 5</option>
+   <option value="6">Lv. 6</option>
+   <option value="7">Lv. 7</option>
+   <option value="8">Lv. 8</option>
+   <option value="9">Lv. 9</option>
+   <option value="10">Lv. 10</option>
+   <option value="11">Lv. 11</option>
+   <option value="12">Lv. 12</option>
+   <option value="13">Lv. 13</option>
+   <option value="14">Lv. 14</option>
+   <option value="15">Lv. 15</option>
+   <option value="16">Lv. 16</option>
+   <option value="17">Lv. 17</option>
+   <option value="18">Lv. 18</option>
+   <option value="19">Lv. 19</option>
+   <option value="20">Lv. 20</option>
+   <option value="21">Lv. 21</option>
+   <option value="22">Lv. 22</option>
+   <option value="23">Lv. 23</option>
+   <option value="24">Lv. 24</option>
+   <option value="25">Lv. 25</option>
+   <option value="26">Lv. 26</option>
+   <option value="27">Lv. 27</option>
+   <option value="28">Lv. 28</option>
+   <option value="29">Lv. 29</option>
+   <option value="30">Lv. 30</option>
+   <option value="31">Lv. 31</option>
+   <option value="32">Lv. 32</option>
+   <option value="33">Lv. 33</option>
+   <option value="34">Lv. 34</option>
+   <option value="35">Lv. 35</option>
+   <option value="36">Lv. 36</option>
+   <option value="37">Lv. 37</option>
+   <option value="38">Lv. 38</option>
+   <option value="39">Lv. 39</option>
+   <option value="40">Lv. 40</option>
+   <option value="41">Lv. 41</option>
+   <option value="42">Lv. 42</option>
+   <option value="43">Lv. 43</option>
+   <option value="44">Lv. 44</option>
+   <option value="45">Lv. 45</option>
+   <option value="46">Lv. 46</option>
+   <option value="47">Lv. 47</option>
+   <option value="48">Lv. 48</option>
+   <option value="49">Lv. 49</option>
+   <option value="50">Lv. 50</option>
+   <option value="51">Lv. 51</option>
+   <option value="52">Lv. 52</option>
+   <option value="53">Lv. 53</option>
+   <option value="54">Lv. 54</option>
+   <option value="55">Lv. 55</option>
+   <option value="56">Lv. 56</option>
+   <option value="57">Lv. 57</option>
+   <option value="58">Lv. 58</option>
+   <option value="59">Lv. 59</option>
+   <option value="60" selected>Lv. 60</option>
+  </select>
+  <select id="mode_selector" title="Change the mode" onchange="changeMode()">
+   <option value="mode_random" title="Randomly choose all skills" selected>Random mode</option>
+   <option value="mode_choice" title="Pick how many skills to randomly choose">Limited Pick mode</option>
+   <option value="mode_draft" title="Pick your skills from a larger set of 10 skills">Draft mode</option>
+  </select>
+  <select id="max_skills_selector" title="Pick no more than this many action skills" style="display:none;" onchange="reset()">
+   <option value="1">1 skill</option>
+   <option value="2">2 skills</option>
+   <option value="3">3 skills</option>
+   <option value="4">4 skills</option>
+   <option value="5">5 skills</option>
+   <option value="6" selected>6 skills</option>
+  </select>
+  <select id="max_passives_selector" title="Pick no more than this many passives" style="display:none;" onchange="reset()">
+   <option value="1">1 passive</option>
+   <option value="2">2 passives</option>
+   <option value="3" selected>3 passives</option>
+  </select>
+  <input type="button" id="generate_button" value="Generate!" onclick="generateSkills()">
+  <br>
+  <label title="Shows the level requirement for each skill."><input type="checkbox" id="show_levels" title="Shows the level requirement for each skill.">Show level?</label>
+  <label title="Shows detailed tooltip data for each skill."><input type="checkbox" id="show_tooltip" title="Shows detailed tooltip data for each skill." checked>Show details?</label>
+  <label title="Picks a random weapon to limit your character to."><input type="checkbox" id="show_weapon" title="Picks a random weapon to limit your character to.">Limit weapon?</label>
+  <p id="skill_area">
+   <noscript><span style="font-style: italic;color:#00bb00">Javascript is required to generate skills, please enable it for this web page.</span></noscript>
+  </p>
+ </div>
+ <br><br><br><br>
+ <div class="copy_area">
+  <p style="font-size: 70%;">Diablo 3 is the intellectual property of Activision-Blizzard, I claim no rights to it.  This tool and the code behind it is free for any use, personal or commercial, and you are free to copy it or modify it.</p>
+ </div>
+</div>
+</body>
+</html>

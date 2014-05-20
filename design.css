@@ -1,0 +1,164 @@
+body{
+ font: 100% Calibri, Arial, Tahoma, sans;
+ background-color: #14130f;
+ color: #9c8d6e;
+}
+
+a:link, a:active, a:visited{
+ font: 80% Calibri, Arial, Tahoma, sans;
+ color: #888888;
+}
+
+a:hover{
+ font: 80% Calibri, Arial, Tahoma, sans;
+ color: #22bbbb;
+}
+
+div{
+ font: 100% Calibri, Arial, Tahoma, sans;
+ max-width: 800px;
+}
+
+div.intro_area, div.copy_area{
+ margin: 5px;
+ padding: 5px;
+ border: 1px solid #222222;
+ background-color: #171611;
+}
+
+div.action_area{
+ margin: 5px;
+ padding: 5px;
+ border: 1px solid #222222;
+ background-color: #24221A;
+}
+
+div.indent{
+ font: 100% Calibri, Arial, Tahoma, sans;
+ margin-left: 15px;
+}
+
+div.box{
+ margin: 10px;
+ padding: 5px;
+ background-color: #12110f;
+ border: 1px solid #2d2c28;
+ display: inline-block;
+ width: 40%;
+ vertical-align: top;
+}
+
+div.tip-left{
+ font: 80% Calibri, Arial, Tahoma, sans;
+ float: left;
+ width: 200px;
+ background-color: #bbddff;
+ padding: 5px;
+ margin: 15px;
+}
+
+div.tip-right{
+ font: 80% Calibri, Arial, Tahoma, sans;
+ float: right;
+ width: 200px;
+ background-color: #bbddff;
+ padding: 5px;
+ margin: 15px;
+}
+
+span.section{
+ font: bold 125% Times New Roman, Georgia, serif;
+ text-transform: uppercase;
+ color: #d96500;
+}
+
+p{
+ margin-left: 15px;
+}
+
+p.small{
+ font: 75% Calibri, Arial, Tahoma, sans;
+}
+
+p.tooltip{
+ font-family: Calibri, Arial, Tahoma, sans;
+ margin-left: 20px;
+ color: #787878;
+}
+
+p.levelreq{
+ font-family: Calibri, Arial, Tahoma, sans;
+ margin-left: 0px;
+ font-style: italic;
+ color: #666666;
+}
+
+span.rune{
+ font-family: Calibri, Arial, Tahoma, sans;
+ color: #3B8CFF;
+}
+
+span.skill{
+ font-family: Times New Roman, Georgia, serif;
+ color: #FFE882;
+}
+
+span.passive{
+ font-family: Times New Roman, Georgia, serif;
+ color: #009900;
+}
+
+dl{
+ margin-left: 15px;
+}
+
+table{
+ border: 1px solid black;
+ margin-left: 15px;
+}
+
+th{
+ font: bold 115% Calibri, Arial, Tahoma, sans;
+ text-align: center;
+ background-color: #dddddd;
+}
+
+hr{
+ border: 1px solid #000000;
+}
+
+@media screen and (max-width: 500px) {
+	body{
+	 font: 110% Calibri, Arial, Tahoma, sans;
+	}
+	
+	div{
+	 font: 110% Calibri, Arial, Tahoma, sans;
+	 max-width: 100%;
+	}
+	
+	span.section{
+	 font: bold 125% Calibri, Arial, Tahoma, sans;
+	}
+	
+	th{
+	 font: bold 120% Calibri, Arial, Tahoma, sans;
+	}
+	
+	div.tip-left{
+	 font: 100% Calibri, Arial, Tahoma, sans;
+	}
+	
+	div.tip-right{
+	 font: 100% Calibri, Arial, Tahoma, sans;
+	}
+	
+	div.box{
+	 margin: 10px;
+	 padding: 5px;
+	 background-color: #12110f;
+	 border: 1px solid #2d2c28;
+	 display: block;
+	 width: 90%;
+	}
+}
